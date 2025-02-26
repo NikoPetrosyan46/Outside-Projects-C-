@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+int calculateSum(int x, int y); //function prototype for sum//
+int calculateDifference (int numOne, int numTwo); // prototype for diff//
+
+int main (){
+    int num1, num2;
+    int keepGoing = 0;
+    //while loop starts here
+    // repeatedly get the two num from the user and display the sum and diff until user enters -9999//
+    while (keepGoing == 0)
+    {   
+        cout << "Enter the first number: ";
+        cin >> num1;
+        // checking if it is -9999, then we are getting out of the loop, going to return 0//
+        if (num1 == -9999) // check val of num1, if it is equal to -9999, we need to terminate the loop// 
+        {
+            keepGoing = 1;
+        }
+        else
+        {
+            cout << "Enter the second number: ";
+            cin >> num2;
+    
+            int sum = calculateSum(num1, num2);
+            int difference = calculateDifference(num1, num2); 
+    
+            cout << "The sum is: " << sum << endl;
+            cout << "The difference is: " << difference << endl;
+        }
+    }
+    return 0;
+}
+
+int calculateSum (int numOne, int numTwo) //func for line 16//
+{
+    int result = 0;
+    result = numOne + numTwo;
+    return result;
+}
+
+int calculateDifference (int numOne, int numTwo) // func for line 17//
+{
+    int result = 0;
+    result = numOne - numTwo;
+    return result;
+}
